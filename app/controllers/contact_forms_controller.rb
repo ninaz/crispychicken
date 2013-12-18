@@ -1,15 +1,15 @@
 class ContactFormsController < ApplicationController
-
+skip_before_filter :require_signin
     def new
       @contact_form = ContactForm.new
     end
 
-    def create
+    def thank_you
       begin
         @contact_form = ContactForm.new(params[:contact_form])
         @contact_form.request = request
         if @contact_form.valid?
-          @contact_form.(params[:contact_form]).deliver
+          @contact_form.deliver
           render :thank_you
         else
           render :new
