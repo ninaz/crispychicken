@@ -18,11 +18,11 @@ Crispychicken::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
+      :address => "smtp.live.com",
       :port => 587,
-      :domain => "smtp.gmail.com",
-      :user_name => "maryfjenn@gmail.com",
-      :password => "Sun838back85a",
+      :domain => "smtp.live.com",
+      :user_name => "Crispy_Chicken@live.com",
+      :password => "Chispa888",
       :authentication => "plain",
       :enable_starttls_auto => true
       }
