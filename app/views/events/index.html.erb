@@ -11,7 +11,7 @@
 	<div class="panel-heading">Add an Event</div>
         <div class="panel-body">
 	<%= form_for @event, remote: true do |f| %>
-        <div class="alert hide alert-success"></div>
+        <div class="alert hide"></div>
         <div class="form-group">
           <%= f.label :event_name, 'Location Name' %>
           <%= f.text_field :event_name, :class => "form-control"  %>
@@ -29,6 +29,10 @@
         <%= f.submit("Add Venue", :class => "btn btn-primary") %>
         <%= link_to 'Make the Map!', "events/show", :class => "btn btn-primary", 'data-no-turbolink' => true %>
         </div>
+        <% @event.errors.each_with_index do |msg, i| %>
+        <li><%= msg[1] %></li>
+        <% end %>
+
     <% end %>
     </div> <!-- Panel End -->
     </div> <!-- Col End -->

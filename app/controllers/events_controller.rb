@@ -12,6 +12,9 @@ class EventsController < ApplicationController
 	# Event display page - shows users events and map
 	def show
 		@events = Event.where(:user_id => current_user['id'] )
+		if @events.empty?
+			redirect_to events_path, :notice => "Looks like you need to create some events first!"
+		end
 		@indStr = 'A'
 		@hash = Gmaps4rails.build_markers(@events) do |event, marker|
 			marker.lat event.latitude
@@ -45,7 +48,6 @@ class EventsController < ApplicationController
 	# Event creation page - stores individual events to database
 	def create
 		@event = Event.new(event_params)
-
 		respond_to do |format|
 			if @event.save
 				format.html { redirect_to @event, notice: 'Event was successfully created.' }
