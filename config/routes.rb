@@ -7,7 +7,7 @@ Crispychicken::Application.routes.draw do
   resources :users, :events, :sessions 
   match '/about',  to: 'information#about',               via: 'get'
   match '/contact',  to: 'contact_forms#new',             via: 'get' , :as => :contact
-  match '/thank_you', to: 'contact_forms#thank_you',      via: 'post', :as => :thank_you
+  match '/thank_you', to: 'users#index',      via: 'post', :as => :thank_you
   resources :sessions do 
    # post 'login'
   end
