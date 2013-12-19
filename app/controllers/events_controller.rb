@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 	require 'time'
 	# before_action :set_event, only: [:show, :edit, :update, :destroy]
 	before_action :correct_user,   only: :destroy
-        skip_before_filter :require_signin, only: :public
+        before_filter :require_signin, except: :public
 
 	# Event creation page
 	def index

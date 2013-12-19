@@ -1,5 +1,4 @@
 class ContactFormsController < ApplicationController
-skip_before_filter :require_signin
     def new
       @contact_form = ContactForm.new
     end
