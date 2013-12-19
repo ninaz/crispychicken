@@ -1,5 +1,5 @@
  class GooglePlacesController < ApplicationController
-
+#TODO: needs to be improved
    def index
    end
 
