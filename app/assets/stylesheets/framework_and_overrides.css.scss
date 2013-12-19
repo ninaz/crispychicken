@@ -9,7 +9,14 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
-  }
+ }
+
+.navbar-inverse {
+  background-color: #303030;
+  opacity: 0.8;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+  border-color: #303030;
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -52,4 +59,14 @@ footer {
   margin-bottom: 0px;
   text-align: center;
   font-weight: bold;
+}
+
+.fakelink {
+  color: #428bca;
+}
+
+.fakelink:hover {
+  color: #2a6496;
+  text-decoration: underline;
+  cursor: pointer;
 }

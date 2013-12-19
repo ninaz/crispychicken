@@ -8,7 +8,7 @@
 <div class="col-md-4"></div>
 <div class="col-md-4 well">
   
-  <%= form_for @contact_form, :url => thank_you_path do  |f| %>
+  <%= form_for @contact_form do  |f| %>
     <div class="form-group">
       <%= f.label :name, "Name" %>
       <%= f.text_field :name, :required => true, :class => "form-control" %>

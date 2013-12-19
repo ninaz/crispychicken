@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Crispychicken" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Crispychicken" %>">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -18,7 +19,13 @@
     </main>
     <footer>
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2013 CrispyChicken. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      <p>&copy; 2013 CrispyChicken. &middot; <span href="" class="fakelink" id="privacy" data-toggle="tooltip" title="The NSA knows everything - why bother?">Privacy</span> &middot; <span href="" class="fakelink" id="terms" data-toggle="tooltip" title="Don't hack us pl0x">Terms</span></p>
+      <script type="text/javascript">
+      $( document ).ready(function() {
+        $('#privacy').tooltip('hide')
+        $('#terms').tooltip('hide')
+      });
+      </script>
     </footer>
   </body>
 </html>
