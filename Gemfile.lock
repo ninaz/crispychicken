@@ -44,6 +44,8 @@ GEM
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     foursquare2 (1.9.8)
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
@@ -164,6 +166,7 @@ DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  font-awesome-rails
   foursquare2
   geocoder
   gmaps4rails
