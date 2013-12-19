@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  include Rails.application.routes.url_helpers  
   has_many :events
   attr_accessible :firstname, :lastname, :email, :password, :password_confirmation
+  validates :firstname, :lastname, :email, :password, :password_confirmation, presence: true
+  validates :email, uniqueness: { case_sensitive: false }, :format => { :with => /\b[A-Z0-9._%a-z-]+@(?:[A-Z0-9a-z-]+.)+[A-Za-z]{2,4}\z/ }
   has_secure_password 
            
   def self.from_omniauth(auth)
@@ -14,7 +17,11 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.password = auth.credentials.token
       user.password_confirmation = auth.credentials.token
-      user.save!
+      if user.save
+        return user
+      else 
+        return nil
+      end
     end
   end	
 

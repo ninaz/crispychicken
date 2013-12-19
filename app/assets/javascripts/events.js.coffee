@@ -38,8 +38,8 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 $(document).ready ->
   $("#new_event").on("ajax:success", (e, data, status, xhr) ->
     if(status == "success")
-      $('.alert-success').text('Successfully added event').addClass('show');
+      $('.alert').text('Successfully added event').addClass('show alert-success').removeClass('alert-danger');
       $('#new_event')[0].reset();
   ).bind "ajax:error", (e, xhr, status, error) ->
-    $("#new_event").append "<p>ERROR</p>"
+      $('.alert').text('You need to fill in all the fields').addClass('show alert-danger').removeClass('alert-success')
 

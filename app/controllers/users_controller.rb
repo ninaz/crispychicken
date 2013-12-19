@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 #	before_filter :redirect_if_signed_in, :only => [:index]
-	skip_before_filter :require_signin, :only => [:index, :new, :create]
+	before_filter :require_signin, :except => [:index, :new, :create]
 	# Homepage - allows creation of user 
 	def index
 		@user = User.new
@@ -39,8 +39,10 @@ class UsersController < ApplicationController
 			redirect_to events_path, :notice => "Welcome #{@user.firstname}!"
 		else
 			# Else redirect to home page
-			redirect_to root_url
+			redirect_to root_url, :alert => @user.errors.full_messages.first
 		end
+	rescue
+      redirect_to root_url
 	end
 
 	def user_params
