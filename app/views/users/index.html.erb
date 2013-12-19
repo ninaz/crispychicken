@@ -121,30 +121,30 @@
        <%= form_for @user, :html => { :class => "form-inline" } do |f| %>
           <%= f.label :firstname, 'Name', :class => "bold" %><br>
 	<div class="form-group">
-          <%= f.text_field :firstname, :placeholder => "First Name", :class => "form-control" %>
+          <%= f.text_field :firstname, :placeholder => "First Name", :required => true, :class => "form-control" %>
 	</div>
 	<div class="form-group">
-          <%= f.text_field :lastname, :placeholder => "Last Name", :class => "form-control" %>
+          <%= f.text_field :lastname, :placeholder => "Last Name", :required => true, :class => "form-control" %>
         </div>
 	<br><br>
         <div class="form-group">
           <%= f.label :email, "Email Address" %>
-          <%= f.email_field :email, :placeholder => "email@example.com", :class => "form-control" %>
+          <%= f.email_field :email, :placeholder => "email@example.com", :required => true, :class => "form-control" %>
         </div>
 	<br><br>
           <%= f.label :firstname, 'Password', :class => "bold" %><br>
 	<div class="form-group">
-          <%= f.password_field :password, :placeholder => "Password", :class => "form-control" %>
+          <%= f.password_field :password, :placeholder => "Password", :required => true, :class => "form-control" %>
 	</div>
 	<div class="form-group">
-          <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :class => "form-control" %>
+          <%= f.password_field :password_confirmation, :placeholder => "Confirm Password", :required => true, :class => "form-control" %>
         </div>
 	<br><br>
         <div class="form-group">
           <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
           <%= f.submit "Next", class: "btn btn-primary" %>
         </div>
-	<a href="#">
+	<a href="/auth/facebook" id="sign_in">
 	<div class="pull-right btn btn-primary facebook">
 	  <span>Register with Facebook</span> <img src="/assets/facebook.png" width="25" align="right">
 	</div>
