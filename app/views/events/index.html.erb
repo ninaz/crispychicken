@@ -14,15 +14,15 @@
         <div class="alert hide"></div>
         <div class="form-group">
           <%= f.label :event_name, 'Location Name' %>
-          <%= f.text_field :event_name, :class => "form-control"  %>
+          <%= f.text_field :event_name, :required => true, :class => "form-control"  %>
           <%= f.label :location, 'Location Address' %>
-          <%= f.text_field :location, :class => "form-control"   %>
+          <%= f.text_field :location, :required => true, :class => "form-control"   %>
           <%= f.label :event_details %>
           <textarea name="event[event_details]" id="event_details" class="form-control"></textarea>
           <%= f.label :event_date, 'Event Date' %>
-          <%= date_field :event, :event_date, :class => "form-control"   %>
+          <%= date_field :event, :event_date, :required => true, :class => "form-control"   %>
           <%= f.label :event_time, 'Event Time' %>      
-          <%= time_field :event, :event_time, :class => "form-control"   %>
+          <%= time_field :event, :event_time, :required => true, :class => "form-control"   %>
           <%= hidden_field(:event, :user_id, :value => session[:user_id] ) %>
         </div> <!--form-group-->
         <hr>

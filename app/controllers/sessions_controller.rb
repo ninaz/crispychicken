@@ -17,8 +17,12 @@ class SessionsController < ApplicationController
 
 	def login
 		user = User.from_omniauth(env["omniauth.auth"])
-		session[:user_id] = user.id
-		redirect_to events_path, :notice => "Welcome, #{user.firstname}!"
+		if user 
+			session[:user_id] = user.id
+			redirect_to events_path, :notice => "Welcome, #{user.firstname}!"
+		else
+			redirect_to root_url, :alert => "Your email address has already been registered!"
+		end
 	end
 
 	def destroy

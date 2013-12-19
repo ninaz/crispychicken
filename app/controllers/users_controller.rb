@@ -39,8 +39,10 @@ class UsersController < ApplicationController
 			redirect_to events_path, :notice => "Welcome #{@user.firstname}!"
 		else
 			# Else redirect to home page
-			redirect_to root_url
+			redirect_to root_url, :alert => @user.errors.full_messages.first
 		end
+	rescue
+      redirect_to root_url
 	end
 
 	def user_params
