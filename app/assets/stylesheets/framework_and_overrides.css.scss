@@ -53,3 +53,13 @@ footer {
   text-align: center;
   font-weight: bold;
 }
+
+.fakelink {
+  color: #428bca;
+}
+
+.fakelink:hover {
+  color: #2a6496;
+  text-decoration: underline;
+  cursor: pointer;
+}
